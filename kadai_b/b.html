@@ -38,17 +38,29 @@
         icon: iconBase + 'flag_maps.png',
         map: map
       });
+      
+      var sanMarco = new google.maps.Marker({
+        position: {lat: 45.43419689400484, lng: 12.338466333466522},
+        icon: iconBase + 'flag_maps.png',
+        map: map
+      });
 
       // Step 3. Add info window
 
-      var contentString = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Ponte di Rialto!<br>(これはリアルト橋です！)</h2><p>リサリサ先生がゴンドラの船頭に扮して初登場.</p></div>';
-
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
+      var contentRialto = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Ponte di Rialto!<br>(これはリアルト橋です！)</h2><p>リサリサ先生がゴンドラの船頭に扮して初登場.</p></div>';
+      var infoRialto = new google.maps.InfoWindow({
+        content: contentRialto
       });
-
       rialto.addListener('click', function() {
-        infowindow.open(map, rialto);
+        infoRialto.open(map, rialto);
+      });
+      
+      var contentSan = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Piazza San Marco!<br>(これはサン・マルコ広場です！)</h2><p>カフェで、男がナンパを装って<br>リサリサ先生の持つエイジャの赤石をスろうとする.</p></div>';
+      var infoSan = new google.maps.InfoWindow({
+        content: contentSan
+      });
+      rialto.addListener('click', function() {
+        infoSan.open(map, sanMarco);
       });
     }
     </script>
