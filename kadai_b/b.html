@@ -33,7 +33,7 @@
 
       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
-      var marker = new google.maps.Marker({
+      var rialto = new google.maps.Marker({
         position: {lat: 45.261700, lng: 12.209300},
         icon: iconBase + 'flag_maps.png',
         map: map
@@ -48,8 +48,8 @@
         content: contentString
       });
 
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
+      rialto.addListener('click', function() {
+        infowindow.open(map, rialto);
       });
     }
     </script>
