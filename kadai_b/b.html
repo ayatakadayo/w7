@@ -37,8 +37,7 @@
         position: {lat: 45.437990594198055, lng: 12.335892301400044},
         icon: iconBase + 'flag_maps.png',
         map: map
-      })
-      .bindPopup('Questo è Ponte di Rialto！(これはリアルト橋です！)');
+      });
 
       // Step 3. Add info window
 
@@ -48,7 +47,7 @@
         content: contentString
       });
 
-      marker.addListener('click', function() {
+      rialto.addListener('click', function() {
         infowindow.open(map, rialto);
       });
     }
