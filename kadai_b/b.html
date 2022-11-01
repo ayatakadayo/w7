@@ -22,14 +22,14 @@
         center: {lat: 45.437990594198055, lng: 12.335892301400044},
         mapTypeId: google.maps.MapTypeId.TERRAIN,
         disableDefaultUI: true,
-        // Step 4. Customize displayed controls
+
         zoomControl: true,
         mapTypeControl: true,
         scaleControl: true
       }
       var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-      // Step 2. Add custom icon
+      // icon
 
       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
@@ -44,10 +44,28 @@
         icon: iconBase + 'flag_maps.png',
         map: map
       });
+      
+      var sanGio = new google.maps.Marker({
+        position: {lat: 45.4294342377188, lng: 12.343203997994431},
+        icon: iconBase + 'flag_maps.png',
+        map: map
+      });
+      
+      var santa = new google.maps.Marker({
+        position: {lat: 45.44112990142287, lng: 12.32106505566689},
+        icon: iconBase + 'flag_maps.png',
+        map: map
+      });
+      
+      var santi = new google.maps.Marker({
+        position: {lat: 45.43938283741287, lng: 12.341717603551466},
+        icon: iconBase + 'flag_maps.png',
+        map: map
+      });
 
-      // Step 3. Add info window
+      // info
 
-      var contentRialto = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Ponte di Rialto!<br>(これはリアルト橋です！)</h2><p>リサリサ先生がゴンドラの船頭に扮して初登場.</p></div>';
+      var contentRialto = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Ponte di Rialto!<br>(これはリアルト橋ｯｯ！)</h2><p>リサリサ先生がゴンドラの船頭に扮して初登場ッ.</p></div>';
       var infoRialto = new google.maps.InfoWindow({
         content: contentRialto
       });
@@ -55,13 +73,38 @@
         infoRialto.open(map, rialto);
       });
       
-      var contentSan = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Piazza San Marco!<br>(これはサン・マルコ広場です！)</h2><p>カフェで、男がナンパを装って<br>リサリサ先生の持つエイジャの赤石をスろうとした.</p></div>';
+      var contentSan = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Piazza San Marco!<br>(これはサン・マルコ広場ｯｯ！)</h2><p>カフェで、男がナンパを装って<br>リサリサ先生の持つエイジャの赤石をスろうとしたッ.</p></div>';
       var infoSan = new google.maps.InfoWindow({
         content: contentSan
       });
       sanMarco.addListener('click', function() {
         infoSan.open(map, sanMarco);
       });
+      
+      var contentSanGio = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Chiesa di San Giorgio Maggiore!<br>(これはサン・ジョルジョ・マッジョーレ教会ｯｯ！)</h2><p>ブチャラティvsボス, 裏切り者になった場.</p></div>';
+      var infoSanGio = new google.maps.InfoWindow({
+        content: contentSanGio
+      });
+      sanGio.addListener('click', function() {
+        infoSanGio.open(map, sanGio);
+      });
+      
+      var contentSanta = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Stazione di Venezia Santa Lucia!<br>(これはヴェネチア・サンタ・ルチーア駅ｯｯ！)</h2><p>ジョルノ&ミスタvsギアッチョ, ギアッチョの首に刺さった街頭があるッ.</p></div>';
+      var infoSanta = new google.maps.InfoWindow({
+        content: contentSanta
+      });
+      santa.addListener('click', function() {
+        infoSanta.open(map, santa);
+      });
+      
+       var contentSanti = '<div id="content"><h2 id="firstHeading" class="firstHeading">Questo è Basilica dei Santi Giovanni e Paolo!<br>(これはサンティ・ジョヴァンニ・エ・パオロ教会ｯｯ！)</h2><p>露伴先生の外伝「岸辺露伴は動かない」の懺悔室ッ.</p></div>';
+      var infoSanty = new google.maps.InfoWindow({
+        content: contentSanti
+      });
+      santi.addListener('click', function() {
+        infoSanty.open(map, santi);
+      });
+      
     }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiV2ZbFIYuD3N4hzGLstSn2e4ZG5A7QlU&callback=initMap"
